@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain.vectorstores.chroma import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
 from get_embedding_function import get_embedding_function
 from langchain_core.prompts import PromptTemplate
@@ -32,7 +32,7 @@ db = Chroma(persist_directory=chroma_path, embedding_function=embedding_function
 
 st.title("Analista de Seguridad SETI")
 
-query_text = st.text_input("Ingrese la pregunta ")
+query_text = st.text_area("Ingrese la pregunta ")
 if(st.button("Enviar pregunta")):
     
         results = db.similarity_search_with_score(query_text, k=2)

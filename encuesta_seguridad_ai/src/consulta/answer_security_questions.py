@@ -1,6 +1,7 @@
 import os
 from langchain_community.vectorstores.chroma import Chroma
-from langchain.prompts import ChatPromptTemplate
+from langchain.chains.query_constructor.base import AttributeInfo
+from langchain.retrievers.self_query.base import SelfQueryRetriever
 from get_embedding_function import get_embedding_function
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
